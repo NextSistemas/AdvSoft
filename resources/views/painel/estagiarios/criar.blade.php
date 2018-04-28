@@ -30,8 +30,8 @@
 
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Dados Pessoais</h3>
 
-				<div class="form-group col-md-3">
-					<label for="situacao">Situação</label>
+				<div class="form-group col-md-2">
+					<label for="situacao">Situação *</label>
 						<select class="form-control input-sm" id="advogadoSituacao" name="situacao">
 						<option>Escola uma opção...</option>
 						<option>Ativo</option>
@@ -39,8 +39,8 @@
 					</select>
 				</div>
 
-				<div class="form-group col-md-6">
-					<label for="nome">Nome completo</label>
+				<div class="form-group col-md-5">
+					<label for="nome">Nome completo *</label>
 					<input type="text" class="form-control input-sm" id="advogadoNome"
 					name="nome" placeholder="digite seu nome...">
 				</div>
@@ -49,6 +49,15 @@
 					<label for="oab">OAB</label>
 					<input type="text" class="form-control input-sm" id="advogadoOab"  
 					name="oab" placeholder="digite sua oab...">
+				</div>
+
+				<div class="form-group col-md-2">
+					<label for="situacao">Turno *</label>
+						<select class="form-control input-sm" id="advogadoSituacao" name="situacao">
+						<option>Escola uma opção...</option>
+						<option>Matutino</option>
+						<option>Vespertino</option>
+					</select>
 				</div>
 					
 			</div>
@@ -59,10 +68,10 @@
 		<div class="box-body">
 			<div class="row">
 					
-				<h3 class="ion-clipboard" style="margin-left: 15px"> Meios de Contato</h3>
+				<h3 class="ion fa-envelope" style="margin-left: 15px"> Meios de Contato</h3>
 
 				<div class="form-group col-md-4">
-					<label for="celular">Celular</label>
+					<label for="celular">Celular *</label>
 					<input type="text" class="form-control input-sm" id="advogadoCelular" 
 					name="celular" placeholder="digite seu celular...">
 				</div>
@@ -89,7 +98,7 @@
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Endereco</h3>
 					
 				<div class="form-group col-md-2">
-					<label for="cep">CEP</label>
+					<label for="cep">CEP *</label>
 					<input type="text" class="form-control input-sm" id="advogadoCep" 
 					name="cep" placeholder="digite seu cep...">
 				</div>

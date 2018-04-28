@@ -157,18 +157,18 @@ class FrontController extends Controller
         return view('painel.clientes.criar');
     }
 
-    //METODOS DE AUDIENCIAS "index,criar,mostrar,store,destroy"
-    public function indexAudiencia()
+    //METODOS DE AGENDAMENTOS "index,criar,mostrar,store,destroy"
+    public function indexAgendamento()
     {
-        return view('painel.audiencias.index');
+        return view('painel.agendamentos.index');
     }
-    public function mostrarAudiencia()
+    public function mostrarAgendamento()
     {
-        return view('painel.audiencias.mostrar');
+        return view('painel.agendamentos.mostrar');
     }
-    public function criarAudiencia()
+    public function criarAgendamento()
     {
-        return view('painel.audiencias.criar');
+        return view('painel.agendamentos.criar');
     }
     
     //METODOS DE BACKUP "index"

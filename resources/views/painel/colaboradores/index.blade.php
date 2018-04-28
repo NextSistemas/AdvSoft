@@ -41,14 +41,14 @@
             <table class="table table-striped table-sm">
 		                <tbody>
 		                	<tr>
-
+								<th class="#"> Código</th>	
 				                <th class="ion-person-stalker"> Nome</th>
 				                <th class="ion-android-phone-portrait"> Celular</th>
 				                <th class="ion-email-unread"> Email</th>
 				                <th class="ion-ios-gear"> Ações</th>
 		                	</tr>
 		                	<tr>
-				            
+				            	<td>1</td>
 				                <td><a href="colaboradores/mostrar">Cleiton Silveira</a></td>
 				                <td>99999999</td>
 				                <td>@text</td>

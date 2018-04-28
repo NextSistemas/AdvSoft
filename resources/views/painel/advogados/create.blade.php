@@ -33,7 +33,7 @@
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Dados Pessoais</h3>
 
 				<div class="form-group col-md-3">
-					<label for="situacao">Situação</label>
+					<label for="situacao">Situação *</label>
 						<select class="form-control input-sm" id="advogadoSituacao" name="situacao">
 						<option>Escola uma opção...</option>
 						<option>Ativo</option>
@@ -48,7 +48,7 @@
 				</div>
 
 				<div class="form-group col-md-3">
-					<label for="oab">OAB</label>
+					<label for="oab">OAB *</label>
 					<input type="text" class="form-control input-sm" id="advogadoOab"  
 					name="oab" placeholder="digite sua oab...">
 				</div>						
@@ -63,7 +63,7 @@
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Meios de Contato</h3>
 
 				<div class="form-group col-md-4">
-					<label for="celular">Celular</label>
+					<label for="celular">Celular *</label>
 					<input type="text" class="form-control input-sm" id="advogadoCelular" 
 					name="celular" placeholder="digite seu celular...">
 				</div>
@@ -90,19 +90,19 @@
 				<h3 class="ion-home" style="margin-left: 15px"> Endereco</h3>
 					
 				<div class="form-group col-md-2">
-					<label for="cep">CEP</label>
+					<label for="cep">CEP *</label>
 					<input type="text" class="form-control input-sm" id="advogadoCep" 
 					name="cep" placeholder="digite seu cep...">
 				</div>
 
 				<div class="form-group col-md-7">
-					<label for="endereco">Rua</label>
+					<label for="endereco">Rua *</label>
 					<input type="text" class="form-control input-sm" id="advogadoRua" 
 					name="endereco" placeholder="digite sua rua...">
 				</div>
 
 				<div class="form-group col-md-3">
-					<label for="complemento">Complemento</label>
+					<label for="complemento">Complemento *</label>
 					<input type="text" class="form-control input-sm" id="advogadoComplemento" name="complemento" placeholder="digite seu complemento...">
 				</div>
 
@@ -119,13 +119,13 @@
 				</div>
 
 				<div class="form-group col-md-4">
-					<label for="cidade">Cidade</label>
+					<label for="cidade">Cidade *</label>
 					<input type="text" class="form-control input-sm" id="advogadoCidade" 
 					name="cidade" placeholder="digite sua cidade...">
 				</div>
 
 				<div class="form-group col-md-2">
-						<label for="uf">Estado(UF)</label>
+						<label for="uf">Estado(UF) *</label>
 							<select class="form-control input-sm" id="advogadoUf" name="uf">
 							<option>Selecione</option>
 						    <option>AC</option>

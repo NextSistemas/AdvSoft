@@ -40,6 +40,7 @@
             <table class="table table-striped table-sm">
 		                <tbody>
 		                	<tr>
+								<th class="#" > Código</th>
 				                <th class="ion-connection-bars"> Situação</th>
 				                <th class="ion-person-stalker"> Nome</th>
 				                <th class="ion-android-phone-portrait"> Celular</th>
@@ -47,6 +48,7 @@
 				                <th class="ion-ios-gear"> Ações</th>
 		                	</tr>
 		                	<tr>
+								<td>1</td>
 				                <td><span class="label label-primary">Ativo</span></td>
 				                <td><a href="estagiarios/mostrar">Cleiton Silveira</a></td>
 				                <td>99999999</td>

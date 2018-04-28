@@ -32,9 +32,9 @@
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Dados</h3>
 
 	            <div class="form-group col-md-4">
-	            	<label for="descricao">Descrição</label>
+	            	<label for="descricao">Descrição *</label>
 	            	<input type="text" class="form-control input-sm" id="instanciaDescricao" 
-					name="nome" placeholder="digite seu nome...">
+					name="nome" placeholder="digite o nome da vara ou foro...">
 	    		</div>
 
 				<div class="form-group col-md-4">

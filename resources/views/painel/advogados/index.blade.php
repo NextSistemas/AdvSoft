@@ -41,6 +41,7 @@
             <table class="table table-striped table-sm">
 		                <tbody>
 		                	<tr>
+								<th class="#"> Código</th>
 				                <th class="ion-connection-bars"> Situação</th>
 				                <th class="ion-person-stalker"> Nome</th>
 				                <th class="ion-android-phone-portrait"> Celular</th>
@@ -49,6 +50,7 @@
 		                	</tr>
 		                	@foreach($advogados as $advogado)
 		                	<tr>
+								<td>{{ $advogado -> id }}</td>
 				                <td>
 				                	@if ($advogado->situacao == 'Ativo')
 				                		<span class="label label-primary">{{ $advogado -> situacao }}</span>

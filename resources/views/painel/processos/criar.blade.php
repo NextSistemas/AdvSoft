@@ -32,12 +32,12 @@
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Dados</h3>
 
 				<div class="form-group col-md-6">
-					<label for="situacao">Cliente</label>
+					<label for="situacao">Cliente *</label>
 					<input type="text" class="form-control input-sm" id="advogadoNome" name="nome" placeholder="digite o nome do cliente...">
 				</div>
 
 				<div class="form-group col-md-4">
-					<label for="acordo">Tipo de Acordo</label>
+					<label for="acordo">Tipo de Acordo *</label>
 					<select class="form-control input-sm" id="advogadoAcordo" name="acordo">
 					<option>Selecione</option>
 					<option>Requerente</option>

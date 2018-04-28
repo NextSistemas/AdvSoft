@@ -22,7 +22,7 @@
 <!-- Tabela de lista de todos os estagiarios cadastrados -->
 <div class="box box-primary">
 	<div class="box-header">
-		<a href="clientes/criar" class="btn btn-success btn-sm"><i class="ion-person-add"></i> Adcionar novo Cliente</a>
+		<a href="clientes/criar" class="btn btn-success btn-sm"><i class="ion-person-add"></i> Adcionar Novo</a>
 
 		<div class="input-group input-group-sm pull-right" style="width: 150px;">
             <input type="text" name="table_search" class="form-control pull-right" placeholder="Pesquisar">
@@ -41,12 +41,14 @@
             <table class="table table-striped table-sm">
 		                <tbody>
 		                	<tr>
+								<th class="#"> Código</th>
 				                <th class="ion-person-stalker"> Nome</th>
 				                <th class="ion-android-phone-portrait"> Celular</th>
 				                <th class="ion-email-unread"> Email</th>
 				                <th class="ion-ios-gear"> Ações</th>
 		                	</tr>
 		                	<tr>
+								<td>1</td>
 				                <td><a href="clientes/mostrar">Cleiton Silveira</a></td>
 				                <td>99999999</td>
 				                <td>@text</td>

@@ -197,13 +197,7 @@ return [
         [
             'text'    => 'Agendamentos',
             'icon'    => 'calendar',
-            'submenu' => [
-                [
-                    'text' => 'Audiências',
-                    'url'  => 'painel/audiencias',
-                    'icon' => 'clipboard',
-                ],
-            ],
+            'url'  => 'painel/agendamentos',
         ],
 
         [

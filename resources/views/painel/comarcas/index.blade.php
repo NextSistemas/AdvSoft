@@ -42,7 +42,7 @@
                 <table class="table table-striped table-sm">
 	                <tbody>
 		               	<tr>
-                        <th class="ion-person-stalker"> Id</th>
+                        <th class="ion-person-stalker"> Código</th>
 				        <th class="ion-person-stalker"> Descrição</th>
                         <th class="ion-ios-gear"> Ações</th>
 		              	</tr>

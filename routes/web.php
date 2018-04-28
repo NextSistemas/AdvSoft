@@ -65,9 +65,9 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Painel', 'prefix' => 'pa
 	$this->get('clientes/criar', 'FrontController@criarCliente');
 
 	//rotas de teste para front de audiencias	
-	$this->get('audiencias', 'FrontController@indexAudiencia');
-	$this->get('audiencias/mostrar', 'FrontController@mostrarAudiencia');
-	$this->get('audiencias/criar', 'FrontController@criarAudiencia');
+	$this->get('agendamentos', 'FrontController@indexAgendamento');
+	$this->get('agendamentos/mostrar', 'FrontController@mostrarAgendamento');
+	$this->get('agendamentos/criar', 'FrontController@criarAgendamento');
 
 	//rotas de teste para front de backup		
 	$this->get('backups', 'FrontController@indexBackup');
