@@ -8,33 +8,17 @@ use App\Models\Advogado;
 
 class AdvogadoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $advogados = Advogado::all();
-        return view('painel.advogados.index',compact('advogados', $advogados));
+        return view('painel.advogados.index',compact('advogados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function novo()
     {
-        return view('painel.advogados.create');
+        return view('painel.advogados.novo');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request, Advogado $advogado)
     {
         //validação
@@ -74,8 +58,7 @@ class AdvogadoController extends Controller
         // Redireciona para a listagem das categorias
         // Passa uma session flash success (sessão temporária)
         if ($insere) {
-            return redirect()
-                    ->route('advogados.index')
+            return redirect('/painel/advogados/'.$advogado->id)
                     ->with('success', 'Advogado inserido com sucesso!');
 
             // Redireciona de volta com uma mensagem de erro
@@ -86,48 +69,33 @@ class AdvogadoController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Advogado $advogado)
+    public function mostrar($id)
     {
-        return view('painel.advogados.show', compact('advogado', $advogado));
+        $advogado = Advogado::find($id);
+        return view('painel.advogados.mostrar', compact('advogado'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function editar($id)
     {
-        //
+        $advogado = Advogado::findOrFail($id);
+        return view('painel.advogados.editar', compact('advogado'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function atualizar(Request $request, $id)
     {
-        //
+        $advogado = Advogado::findOrFail($id);
+
+        $advogado->update($request->all());  
+        
+        \Session::flash('success', 'Advogado atualizado com sucesso!');
+        return redirect('/painel/advogados');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function deletar($id)
     {
-        //
+        $advogado = Advogado::findOrFail($id);
+        $advogado->delete();
+        \Session::flash('success', 'Advogado deletado com sucesso!');
+        return redirect('/painel/advogados');        
     }
 }

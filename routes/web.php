@@ -10,7 +10,15 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Painel', 'prefix' => 'pa
 
 	$this->get('/', 'PainelController@index')->name('painel');
 
-	$this->resource('advogados', 'AdvogadoController');
+	//$this->resource('advogados', 'AdvogadoController');	
+	$this->get('advogados', 'AdvogadoController@index');
+	$this->get('advogados/novo', 'AdvogadoController@novo');
+	$this->post('advogados', 'AdvogadoController@store');
+	$this->get('advogados/{id}', 'AdvogadoController@mostrar');	
+	$this->get('advogados/{id}/editar', 'AdvogadoController@editar');
+	$this->put('advogados/{id}', 'AdvogadoController@atualizar');
+	$this->delete('advogados/{id}', 'AdvogadoController@deletar');
+		
 
 	//rotas para teste de front end 
 

@@ -1,35 +1,56 @@
 @extends('adminlte::page')
 
-@section('title', 'Advogado')
+@section('title', 'Lista de Advogados')
 
 @section('content_header')
-    <h1>Advogado(a) {{ $advogado->nome }}</h1>
+
 @stop
 
 @section('content')
-<ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li class="active">Advogados</li>
-</ol>
 
-		@if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-
-<div class="box box-primary">
+<!-- box-solid -->
+<div class="box box-solid box-primary">
+	<!-- box-header -->
 	<div class="box-header">
-		<a href="{{ route('advogados.index') }}" class="btn btn-success btn-sm"> <span class="ion-clipboard"> Lista de Advogados</span></a>
-	</div>
+        <i id="icon" class="fa fa-tags"></i>
+        <h3 class="box-title">Informações</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-primary btn-sm" data-widget="refresh" title="Atualizar informações">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <button class="btn btn-primary btn-sm" data-widget="collapse" title="Diminuir/Aumentar janela">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+	<!-- fim box-header -->
 
-	<div class="box-body">
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">advogados</a></li>        
+        <li class="active">mostrar</li>
+    </ol>
+
+    <!-- box-body -->
+    <div class="box-body">
+		<!-- box-header -->
+		<div class="box-header pull-right">
+			<a href="{{ url('painel/advogados') }}" class="btn btn-success btn-sm">
+			<i class="fa fa-clipboard"></i> Voltar à lista</a>
+		</div>
+		<!-- fim box-header -->
+
         <div class="text-justify">
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
                         <td><strong>Código</strong></td>
                         <td>{{ $advogado->id }}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Nome</strong></td>
+                        <td>{{ $advogado->nome }}</td>
                     </tr>
 
                     <tr>
@@ -98,16 +119,20 @@
 
                     <tr>
                         <td><strong>Criado em</strong></td>
-                        <td>{{ $advogado->created_at->format('d-m-Y - H:i:s') }}</td>
+                        <td>{{ $advogado->created_at}}</td>
                     </tr>
 
                     <tr>
                         <td><strong>Atualizado em</strong></td>
-                        <td>{{ $advogado->updated_at->format('d-m-Y - H:i:s') }}</td>
+                        <td>{{ $advogado->updated_at}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <!-- fim box-body -->
 </div>
+<!-- fim box-solid -->
+
 @stop
+	
