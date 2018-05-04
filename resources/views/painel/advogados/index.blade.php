@@ -69,7 +69,6 @@
 							<tbody>
 								<tr>
 									<th class="#"> Código</th>
-									<th class="ion-connection-bars"> Situação</th>
 									<th class="ion-person-stalker"> Nome</th>
 									<th class="ion-android-phone-portrait"> Celular</th>
 									<th class="ion-ios-gear"> Ações</th>
@@ -77,13 +76,6 @@
 								@foreach($advogados as $advogado)
 								<tr>
 									<td>{{ $advogado -> id }}</td>
-									<!-- <td>
-										@if ($advogado->situacao == 'Ativo')
-											<span class="label label-primary">{{ $advogado -> situacao }}</span>
-										@else
-											<span class="label label-default">{{ $advogado -> situacao }}</span>
-										@endif
-									</td> -->
 									<td><a href="advogados/{{ $advogado->id }}">{{ $advogado -> nome }}</a></td>
 									<td>{{ $advogado -> celular }}</td>
 									<td>
@@ -95,8 +87,13 @@
 										<form action="{{ url('painel/advogados', [$advogado->id]) }}" method="POST">
 											<input type="hidden" name="_method" value="DELETE">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
-											<button type="submit" class="btn btn-danger btn-xs"> <i class="ion-trash-a"></i> Excluir </button>
+
+											<button type="submit" class="btn btn-danger btn-xs">
+												<i class="ion-trash-a"></i> Excluir
+											</button>
 										</form>
+
+										
 									</td>
 								</tr>
 								@endforeach

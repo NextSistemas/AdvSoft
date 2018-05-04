@@ -59,14 +59,8 @@
                     <div class="tab-pane fade in active" id="dadosPessoais">
                     <br>
 
-                        <div class="form-group col-md-3">
-                            <label for="status">Status</label>
-                            <input type="text" class="form-control input-sm" id="advogadoStatus" 
-                            name="status">
-                        </div>
-
                         <!-- nome completo -->
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-9">
                             <label for="nome"><span style="color:#ea1e1e">Nome Completo</span></label>
                             <input type="text" class="form-control input-sm" id="advogadoNome" 
                             name="nome" placeholder="digite seu nome..." required>

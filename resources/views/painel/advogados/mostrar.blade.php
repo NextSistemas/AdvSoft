@@ -8,6 +8,16 @@
 
 @section('content')
 
+<!-- mensagem de sucesso -->
+@if (session('success'))
+	<div class="alert alert-adminLTE alert-success">
+	<i class="fa fa-check"></i>
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		{{ session('success') }}
+	</div>
+@endif
+<!-- fim mensagem de sucesso -->
+
 <!-- box-solid -->
 <div class="box box-solid box-primary">
 	<!-- box-header -->
@@ -35,6 +45,9 @@
     <div class="box-body">
 		<!-- box-header -->
 		<div class="box-header pull-right">
+            <a href="{{ url('painel/advogados/novo') }}" class="btn btn-warning btn-sm">
+			<i class="ion-person-add"></i> Adicionar novo</a>
+
 			<a href="{{ url('painel/advogados') }}" class="btn btn-success btn-sm">
 			<i class="fa fa-clipboard"></i> Voltar à lista</a>
 		</div>
@@ -51,11 +64,6 @@
                     <tr>
                         <td><strong>Nome</strong></td>
                         <td>{{ $advogado->nome }}</td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>Situacao</strong></td>
-                        <td>{{ $advogado->situacao }}</td>
                     </tr>
 
                     <tr>
