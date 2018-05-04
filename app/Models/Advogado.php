@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Advogado extends Model
 {
     protected $fillable = [
-    	'situacao',
+    	    'status',
             'nome',
             'oab',
             'celular',
