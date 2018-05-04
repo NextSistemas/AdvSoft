@@ -11,13 +11,12 @@ class AdvogadoController extends Controller
     public function index()
     {
         //$advogados = Advogado::all();
-        $advogados = Advogado::where('status','publicado')->get();
+        $advogados = Advogado::where('status','ativo')->get();
         return view('painel.advogados.index',compact('advogados'));
     }
 
     public function novo()
     {
-        $advogado = Advogado::create(['status','publicado']);
         return view('painel.advogados.novo', compact('advogado'));
     }
     
@@ -26,7 +25,6 @@ class AdvogadoController extends Controller
         //validação
         $request->validate([
             
-            'status' => 'required',
             'nome' => 'required',
             'oab' => 'required',
             'celular' => 'required',
@@ -37,8 +35,8 @@ class AdvogadoController extends Controller
             'uf' => 'required',
         ]);
 
-        /*$advogado = Advogado::create([
-            'situacao' => $request->situacao,
+        $advogado = Advogado::create([
+            'status' => $request->status = 'ativo',
             'nome' => $request->nome,
             'oab' => $request->oab,
             'celular' => $request->celular,
@@ -53,13 +51,13 @@ class AdvogadoController extends Controller
             'uf' => $request->uf,
             'descricao' => $request->descricao
 
-        ]);*/
-        $insere = $advogado->create($request->all());
+        ]);
+        //$insere = $advogado->create($request->all());
 
         // Verifica se inseriu com sucesso
-        // Redireciona para a listagem das categorias
+        // Redireciona para a listagem dos advogados
         // Passa uma session flash success (sessão temporária)
-        if ($insere) {
+        if ($advogado) {
             return redirect('/painel/advogados/'.$advogado->id)
                     ->with('success', 'Advogado inserido com sucesso!');
 
@@ -96,7 +94,8 @@ class AdvogadoController extends Controller
     public function deletar($id)
     {
         $advogado = Advogado::findOrFail($id);
-        $advogado->delete();
+        $advogado->status = 'inativo';
+        $advogado->update();
         \Session::flash('success', 'Advogado deletado com sucesso!');
         return redirect('/painel/advogados');        
     }

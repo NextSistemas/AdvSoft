@@ -9,8 +9,8 @@ Auth::routes();
 $this->group(['middleware' => ['auth'], 'namespace' => 'Painel', 'prefix' => 'painel'], function (){
 
 	$this->get('/', 'PainelController@index')->name('painel');
-
-	//$this->resource('advogados', 'AdvogadoController');	
+	
+	//rotas para advogados	
 	$this->get('advogados', 'AdvogadoController@index');
 	$this->get('advogados/novo', 'AdvogadoController@novo');
 	$this->post('advogados', 'AdvogadoController@store');

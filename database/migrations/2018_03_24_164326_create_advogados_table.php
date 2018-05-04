@@ -15,7 +15,7 @@ class CreateAdvogadosTable extends Migration
     {
         Schema::create('advogados', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('status');            
+            $table->enum('status', ['ativo','inativo']);            
             $table->string('nome');
             $table->string('oab');
             $table->string('celular');

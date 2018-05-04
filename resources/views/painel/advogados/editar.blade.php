@@ -59,19 +59,9 @@
                     <!-- conteudo de dados pessoais -->                        
                     <div class="tab-pane fade in active" id="dadosPessoais">
                     <br>
-                        <!-- select situacao -->
-                        <div class="form-group col-md-3">
-                        <label for="situacao"><span style="color:#ea1e1e">Situação</span></label>
-                            <select class="form-control input-sm" id="processoSituacao" name="situacao" required>
-                                <option>{{ $advogado->situacao }}</option>
-                                <option value="Ativo">A</option>
-                                <option value="Inativo">I</option>
-                            </select>
-                        </div>
-                        <!-- fim select situação -->
 
                         <!-- nome completo -->
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-9">
                             <label for="nome"><span style="color:#ea1e1e">Nome Completo</span></label>
                             <input type="text" value="{{ $advogado->nome }}" class="form-control input-sm" id="advogadoNome" 
                             name="nome" placeholder="digite seu nome..." required>
