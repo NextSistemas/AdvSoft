@@ -58,16 +58,12 @@
                     <!-- conteudo de dados pessoais -->                        
                     <div class="tab-pane fade in active" id="dadosPessoais">
                     <br>
-                        <!-- select situacao -->
+
                         <div class="form-group col-md-3">
-                        <label for="situacao"><span style="color:#ea1e1e">Situação</span></label>
-                            <select class="form-control input-sm" id="processoSituacao" name="situacao" required>
-                                <option></option>
-                                <option value="Ativo">A</option>
-                                <option value="Inativo">I</option>
-                            </select>
+                            <label for="status">Status</label>
+                            <input type="text" class="form-control input-sm" id="advogadoStatus" 
+                            name="status">
                         </div>
-                        <!-- fim select situação -->
 
                         <!-- nome completo -->
                         <div class="form-group col-md-6">

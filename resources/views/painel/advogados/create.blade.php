@@ -32,13 +32,10 @@
 
 				<h3 class="ion-clipboard" style="margin-left: 15px"> Dados Pessoais</h3>
 
-				<div class="form-group col-md-3">
-					<label for="situacao">Situação *</label>
-						<select class="form-control input-sm" id="advogadoSituacao" name="situacao">
-						<option>Escola uma opção...</option>
-						<option>Ativo</option>
-						<option>Inativo</option>
-					</select>
+				<div class="form-group col-md-6">
+					<label for="public">Public</label>
+					<input type="text" class="form-control input-sm" id="advogadoPublic" 
+					name="nome" disabled>
 				</div>
 
 				<div class="form-group col-md-6">

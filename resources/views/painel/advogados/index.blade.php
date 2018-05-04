@@ -77,13 +77,13 @@
 								@foreach($advogados as $advogado)
 								<tr>
 									<td>{{ $advogado -> id }}</td>
-									<td>
+									<!-- <td>
 										@if ($advogado->situacao == 'Ativo')
 											<span class="label label-primary">{{ $advogado -> situacao }}</span>
 										@else
 											<span class="label label-default">{{ $advogado -> situacao }}</span>
 										@endif
-									</td>
+									</td> -->
 									<td><a href="advogados/{{ $advogado->id }}">{{ $advogado -> nome }}</a></td>
 									<td>{{ $advogado -> celular }}</td>
 									<td>

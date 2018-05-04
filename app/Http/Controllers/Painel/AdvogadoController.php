@@ -10,13 +10,15 @@ class AdvogadoController extends Controller
 {
     public function index()
     {
-        $advogados = Advogado::all();
+        //$advogados = Advogado::all();
+        $advogados = Advogado::where('status','publicado')->get();
         return view('painel.advogados.index',compact('advogados'));
     }
 
     public function novo()
     {
-        return view('painel.advogados.novo');
+        $advogado = Advogado::create(['status','publicado']);
+        return view('painel.advogados.novo', compact('advogado'));
     }
     
     public function store(Request $request, Advogado $advogado)
@@ -24,7 +26,7 @@ class AdvogadoController extends Controller
         //validação
         $request->validate([
             
-            'situacao' => 'required',
+            'status' => 'required',
             'nome' => 'required',
             'oab' => 'required',
             'celular' => 'required',
