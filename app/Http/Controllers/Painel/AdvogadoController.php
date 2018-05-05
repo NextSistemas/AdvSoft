@@ -91,11 +91,10 @@ class AdvogadoController extends Controller
         return redirect('/painel/advogados');
     }
 
-    public function deletar($id)
+    public function deletar(Request $id, Advogado $advogado)
     {
-        $advogado = Advogado::findOrFail($id);
-        $advogado->status = 'inativo';
-        $advogado->update();
+        //dd($id->toArray());
+        $delete = $advogado->deleteID($id->delete);
         \Session::flash('success', 'Advogado deletado com sucesso!');
         return redirect('/painel/advogados');        
     }
