@@ -84,14 +84,38 @@
 												<button type="button" class="btn btn-warning btn-xs"><i class="ion-edit"></i> Editar</button>
 											</a>&nbsp;
 										</div>
-										<form action="{{ url('painel/advogados', [$advogado->id]) }}" method="POST">
-											<input type="hidden" name="_method" value="DELETE">
-											<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-											<button type="submit" class="btn btn-danger btn-xs">
-												<i class="ion-trash-a"></i> Excluir
-											</button>
-										</form>
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">
+										Excluir M
+										</button>
+
+										<!-- Modal -->
+										<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+												<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+												
+												<form action="{{ url('painel/advogados')}}" method="POST">
+													<input type="hidden" name="delete" value="{{$advogado->id}}">
+													<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+													<button type="submit" >
+														<i class="ion-trash-a"></i> Excluir
+													</button>
+												</form>
+											</div>
+											</div>
+										</div>
+										</div>
 
 										
 									</td>

@@ -22,4 +22,18 @@ class Advogado extends Model
             'uf',
             'descricao'
     ];
+
+    public function deleteID($id)
+    {   //BD::begintransiction;
+        $advogado = Advogado::findOrFail($id);
+        $advogado->status = 'inativo';
+        $advogado->update();
+        dd($advogado);
+        /*if(){
+            BD::commit;
+        }else{
+            BD::rollback;
+        }
+        return $advogado;*/
+    }
 }
