@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Advogado extends Model
 {
@@ -22,6 +23,15 @@ class Advogado extends Model
             'uf',
             'descricao'
     ];
+
+    //metodo para listar todos os dados de advogado na view index
+    public function listar()
+    {
+        DB::beginTransaction();
+        //dd($advogados = Advogado::where('status','Inativo')->get());
+        $advogados = Advogado::where('status','Ativo')->get();
+        return $advogados;
+    }
 
     public function deleteID($id)
     {   //BD::begintransiction;

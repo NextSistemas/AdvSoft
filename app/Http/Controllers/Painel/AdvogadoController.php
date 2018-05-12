@@ -10,8 +10,9 @@ class AdvogadoController extends Controller
 {
     public function index()
     {
-        //$advogados = Advogado::all();
-        $advogados = Advogado::where('status','ativo')->get();
+        $advogado = new Advogado;
+        //dd($advogados = $advogado->listar());
+        $advogados = $advogado->listar();
         return view('painel.advogados.index',compact('advogados'));
     }
 

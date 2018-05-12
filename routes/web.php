@@ -17,7 +17,7 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Painel', 'prefix' => 'pa
 	$this->get('advogados/{id}', 'AdvogadoController@mostrar');	
 	$this->get('advogados/{id}/editar', 'AdvogadoController@editar');
 	$this->put('advogados/{id}', 'AdvogadoController@atualizar');
-	$this->post('advogados', 'AdvogadoController@deletar');
+	$this->post('advogados', 'AdvogadoController@deletar')->name('advogados.deletar');
 		
 
 	//rotas para teste de front end 
