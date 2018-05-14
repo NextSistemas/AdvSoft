@@ -24,9 +24,9 @@ class FrontController extends Controller
        return view('painel.estagiarios.mostrar');
     }
     
-    public function criarEstagiario()
+    public function novoEstagiario()
     {
-       return view('painel.estagiarios.criar');
+       return view('painel.estagiarios.novo');
     }
 
     //METODOS DE COLABORADOR "index,criar,mostrar,store,destroy"
@@ -40,9 +40,9 @@ class FrontController extends Controller
         return view('painel.colaboradores.mostrar');
     }
 
-    public function criarColaborador()
+    public function novoColaborador()
     {
-        return view('painel.colaboradores.criar');
+        return view('painel.colaboradores.novo');
     }
 
     //METODOS DE TIPOS DE PROCESSOS "index,criar,mostrar,store,destroy"
@@ -56,9 +56,9 @@ class FrontController extends Controller
         return view('painel.tiposProcessos.mostrar');
     }
 
-    public function criarTipoProcesso()
+    public function novoTipoProcesso()
     {
-        return view('painel.tiposProcessos.criar');
+        return view('painel.tiposProcessos.novo');
     }
 
     //METODOS DE TRIBUNAIS "index,criar,mostrar,store,destroy"
@@ -72,9 +72,9 @@ class FrontController extends Controller
         return view('painel.tribunais.mostrar');
     }
 
-    public function criarTribunal()
+    public function novoTribunal()
     {
-        return view('painel.tribunais.criar');
+        return view('painel.tribunais.novo');
     }
 
     //METODOS DE COMARCAS "index,criar,mostrar,store,destroy"
@@ -88,9 +88,9 @@ class FrontController extends Controller
         return view('painel.comarcas.mostrar');
     }
 
-    public function criarComarca()
+    public function novoComarca()
     {
-        return view('painel.comarcas.criar');
+        return view('painel.comarcas.novo');
     }
 
     //METODOS DE INSTANCIAS "index,criar,mostrar,store,destroy"
@@ -104,9 +104,9 @@ class FrontController extends Controller
         return view('painel.instancias.mostrar');
     }
 
-    public function criarInstancia()
+    public function novoInstancia()
     {
-        return view('painel.instancias.criar');
+        return view('painel.instancias.novo');
     }
 
     //METODOS DE VARAS/FOROS "index,criar,mostrar,store,destroy"
@@ -120,9 +120,9 @@ class FrontController extends Controller
         return view('painel.varasForos.mostrar');
     }
 
-    public function criarVaraForo()
+    public function novoVaraForo()
     {
-        return view('painel.varasForos.criar');
+        return view('painel.varasForos.novo');
     }
 
     //METODOS DE PROCESSOS "index,criar,mostrar,store,destroy"
@@ -136,9 +136,9 @@ class FrontController extends Controller
         return view('painel.processos.mostrar');
     }
 
-    public function criarProcesso()
+    public function novoProcesso()
     {
-        return view('painel.processos.criar');
+        return view('painel.processos.novo');
     }
     
     //METODOS DE CLIENTES "index,criar,mostrar,store,destroy"
@@ -152,9 +152,9 @@ class FrontController extends Controller
         return view('painel.clientes.mostrar');
     }
 
-    public function criarCliente()
+    public function novoCliente()
     {
-        return view('painel.clientes.criar');
+        return view('painel.clientes.novo');
     }
 
     //METODOS DE AGENDAMENTOS "index,criar,mostrar,store,destroy"
@@ -166,9 +166,9 @@ class FrontController extends Controller
     {
         return view('painel.agendamentos.mostrar');
     }
-    public function criarAgendamento()
+    public function novoAgendamento()
     {
-        return view('painel.agendamentos.criar');
+        return view('painel.agendamentos.novo');
     }
     
     //METODOS DE BACKUP "index"
