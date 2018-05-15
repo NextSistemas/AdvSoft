@@ -22,8 +22,8 @@ class CreateAdvogadosTable extends Migration
             $table->string('telefone')->nullable();
             $table->string('email')->nullable();
             $table->string('cep');
-            $table->string('endereco');
-            $table->string('complemento');
+            $table->string('rua');
+            $table->string('complemento')->nullable();
             $table->string('numero')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade');

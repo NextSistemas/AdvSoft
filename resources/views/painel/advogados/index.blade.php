@@ -44,7 +44,7 @@
 	<div class="box-body">
 		<!-- box-header -->
 		<div class="box-header">
-			<a href="advogados/novo" class="btn btn-success btn-sm">
+			<a href="{{ route('advogados.create') }}" class="btn btn-success btn-sm">
 			<i class="ion-person-add"></i> Adcionar Novo</a>
 
 			<div class="input-group input-group-sm pull-right" style="width: 150px;">
@@ -107,7 +107,7 @@
 													</p>
 												</div>
 													<div class="modal-footer">
-														<form action="{{ route('advogados.deletar') }}" method="POST">
+														<form action="{{ route('advogados.delete') }}" method="POST">
 															<input type="hidden" name="delete" value="{{$advogado->id}}">
 															<input type="hidden" name="_token" value="{{ csrf_token() }}">
 

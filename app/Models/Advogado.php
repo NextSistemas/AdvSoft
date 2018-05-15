@@ -15,7 +15,7 @@ class Advogado extends Model
             'telefone',
             'email',
             'cep',
-            'endereco',
+            'rua',
             'complemento',
             'numero',
             'bairro',
@@ -33,17 +33,72 @@ class Advogado extends Model
         return $advogados;
     }
 
+    //metodo para salvar um advogado pegando esses dados da view
+    public function salvar($advogado)
+    {
+        DB::beginTransaction();
+        //dd($advogado);
+        $advogado = Advogado::create([
+            'status' => 'ativo',
+            'nome' => $advogado['nome'],
+            'oab' => $advogado['oab'],
+            'celular' => $advogado['celular'],
+            'telefone' => $advogado['telefone'],
+            'email' => $advogado['email'],
+            'cep' => $advogado['cep'],
+            'rua' => $advogado['rua'],
+            'complemento' => $advogado['complemento'],
+            'numero' => $advogado['numero'],
+            'bairro' => $advogado['bairro'],
+            'cidade' => $advogado['cidade'],
+            'uf' => $advogado['uf'],
+            'descricao' => $advogado['descricao']
+        ]);
+
+        //verifica se o cadastro foi efetuado com sucesso
+        if ($advogado) {
+            DB::commit();
+
+            return [
+                'success' => true,
+                'message' => 'Advogado(a) cadastrado com sucesso!'
+            ];
+        } else {
+            DB::rollback();
+
+            return [
+                'sucess' => false,
+                'message' => 'Falha ao cadastrar Advogado(a)'
+            ];
+        }
+        
+    }
+
+    //metodo para excluir um advogado pelo id
     public function deleteID($id)
-    {   //BD::begintransiction;
+    {   
+        DB::beginTransaction();
+
         $advogado = Advogado::findOrFail($id);
         $advogado->status = 'inativo';
         $advogado->update();
-        dd($advogado);
-        /*if(){
-            BD::commit;
-        }else{
-            BD::rollback;
+        //dd($advogado);
+
+        //verifica se houve a "exclusão" com sucesso
+        if ($advogado) {
+            DB::commit();
+
+            return [
+                'success' => true,
+                'message' => 'Advogado(a) excluido com sucesso!'
+            ];
+        } else {
+            DB::rollback();
+
+            return [
+                'sucess' => false,
+                'message' => 'Falha ao excluir Advogado(a)'
+            ];
         }
-        return $advogado;*/
     }
 }

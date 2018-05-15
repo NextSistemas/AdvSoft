@@ -92,18 +92,18 @@
                     </tr>
 
                     <tr>
-                        <td><strong>Endereço</strong></td>
-                        <td>{{ $advogado->endereco }}</td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>Complemento</strong></td>
-                        <td>{{ $advogado->complemento }}</td>
+                        <td><strong>Rua</strong></td>
+                        <td>{{ $advogado->rua }}</td>
                     </tr>
 
                     <tr>
                         <td><strong>Número</strong></td>
                         <td>{{ $advogado->numero }}</td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Complemento</strong></td>
+                        <td>{{ $advogado->complemento }}</td>
                     </tr>
 
                     <tr>
