@@ -51,7 +51,7 @@
             </ul>
 
             <!-- formulario -->
-            <form role="form" action="{{ url('painel/advogados', [$advogado->id]) }}" method="POST">
+            <form role="form" action="{{ route('advogados.update', [$advogado->id]) }}" method="POST">
             <input type="hidden" name="_method" value="PUT">
             {{ csrf_field() }}
                 <!-- tabela de conteudo -->
@@ -63,16 +63,16 @@
                         <!-- nome completo -->
                         <div class="form-group col-md-9">
                             <label for="nome"><span style="color:#ea1e1e">Nome Completo</span></label>
-                            <input type="text" value="{{ $advogado->nome }}" class="form-control input-sm" id="advogadoNome" 
-                            name="nome" placeholder="digite seu nome..." required>
+                            <input type="text" class="form-control input-sm" 
+                            name="nome" placeholder="digite seu nome..." value="{{ $advogado->nome }}">
                         </div>  
                         <!-- fim nome completo -->
 
                         <!-- OAB -->
                         <div class="form-group col-md-3">
                             <label for="oab"><span style="color:#ea1e1e">OAB</span></label>
-                            <input type="text" value="{{ $advogado->oab }}" class="form-control input-sm" id="advogadoOab"  
-                            name="oab" placeholder="digite sua oab..." required>
+                            <input type="text" class="form-control input-sm"  
+                            name="oab" placeholder="digite sua oab..." value="{{ $advogado->oab }}">
                         </div>
                         <!-- fim OAB -->                                                                                                    
                     </div>
@@ -85,116 +85,91 @@
                         <!-- celular -->
                         <div class="form-group col-md-4">
                             <label for="celular"><span style="color:#ea1e1e">Celular</span></label>
-                            <input type="text" value="{{ $advogado->celular }}" class="form-control input-sm" id="advogadoCelular" 
-                            name="celular" placeholder="digite seu celular..." required>
+                            <input type="text" class="form-control input-sm" 
+                            name="celular" placeholder="digite seu celular..." value="{{ $advogado->celular }}">
                         </div>
                         <!-- fim celular -->
 
                         <!-- telefone -->
                         <div class="form-group col-md-4">
                             <label for="telefone">Telefone</label>
-                            <input type="text" value="{{ $advogado->telefone }}" class="form-control input-sm" id="advogadoTelefone" 
-                            name="telefone" placeholder="digite seu telefone...">
+                            <input type="text" class="form-control input-sm" id="advogadoTelefone" 
+                            name="telefone" placeholder="digite seu telefone..." value="{{ $advogado->telefone }}">
                         </div>
                         <!-- fim telefone -->  
 
                         <!-- email -->
                         <div class="form-group col-md-4">
                             <label for="email">E-mail</label>
-                            <input type="email" value="{{ $advogado->email }}" class="form-control input-sm" id="advogadoEmail" 
-                            name="email" placeholder="digite seu e-mail...">
+                            <input type="email" class="form-control input-sm" id="advogadoEmail" 
+                            name="email" placeholder="digite seu e-mail..." value="{{ $advogado->email }}">
                         </div>
                         <!-- fim email -->	                    
                     </div>
                     <!-- fim conteudo de meios de contato -->
 
-                    <!-- conteudo de endereço -->                        
+                    <!-- conteudo de endereço | usando API ViaCep | OBS: não alterar nenhuma tag dessa api-->                        
                     <div class="tab-pane fade" id="endereco">
                     <br>
-
+                    <!-- form para consumir a API -->
+                    <form action="." method="get">
                         <!-- cep -->
                         <div class="form-group col-md-2">
-                            <label for="cep"><span style="color:#ea1e1e">CEP</span></label>
-                            <input type="text" value="{{ $advogado->cep }}" class="form-control input-sm" id="advogadoCep" 
-                            name="cep" placeholder="digite seu cep..." required>
+                            <label><span style="color:#ea1e1e">CEP</span></label>
+                            <input type="text" class="form-control input-sm" id="cep" size="10" maxlength="9"
+                            name="cep" placeholder="informe um CEP válido" value="{{ $advogado->cep }}">
                         </div>
                         <!-- fim cep -->
 
                         <!-- endereco -->
-                        <div class="form-group col-md-7">
-                            <label for="endereco"><span style="color:#ea1e1e">Endereço</span></label>
-                            <input type="text" value="{{ $advogado->endereco }}" class="form-control input-sm" id="advogadoRua" 
-                            name="endereco" placeholder="digite seu endereço..." required>
+                        <div class="form-group col-md-8">
+                            <label><span style="color:#ea1e1e">Rua</span></label>
+                            <input type="text" class="form-control input-sm" id="rua"
+                            name="rua" placeholder="digite seu endereço..." value="{{ $advogado->rua }}">
                         </div>
                         <!-- fim endereço -->
 
-                        <!-- complemento -->
-                        <div class="form-group col-md-3">
-                            <label for="complemento"><span style="color:#ea1e1e">Complemento</span></label>
-                            <input type="text" value="{{ $advogado->complemento }}" class="form-control input-sm" id="advogadoComplemento" 
-                            name="complemento" placeholder="digite seu complemento..." required>
-                        </div>
-                        <!-- fim complemento -->
-
                         <!-- numero da residencia -->
                         <div class="form-group col-md-2">
-                            <label for="numero">Número</label>
-                            <input type="text" value="{{ $advogado->numero }}" class="form-control input-sm" id="advogadoNumero" 
-                            name="numero" placeholder="digite o nº da sua residência...">
+                            <label>Número</label>
+                            <input type="text" class="form-control input-sm" id="numero" size="60"
+                            name="numero" placeholder="digite o nº da sua residência..." value="{{ $advogado->numero }}">
                         </div>
                         <!-- fim numero da residencia -->
 
+                        <!-- complemento -->
+                        <div class="form-group col-md-3">
+                            <label>Complemento</label>
+                            <input type="text" class="form-control input-sm" id="complemento"
+                            name="complemento" placeholder="digite seu complemento..." value="{{ $advogado->complemento }}">
+                        </div>
+                        <!-- fim complemento -->
+
                         <!-- bairro -->
                         <div class="form-group col-md-4">
-                            <label for="bairro">Bairro</label>
-                            <input type="text" value="{{ $advogado->bairro }}" class="form-control input-sm" id="advogadoBairro" 
-                            name="bairro" placeholder="digite seu bairro...">
+                            <label>Bairro</label>
+                            <input type="text" class="form-control input-sm" id="bairro" size="40"
+                            name="bairro" placeholder="digite seu bairro..." value="{{ $advogado->bairro }}">
                         </div>
                         <!-- fim bairro -->
 
                         <!-- cidade -->
                         <div class="form-group col-md-4">
-                            <label for="cidade"><span style="color:#ea1e1e">Cidade</span></label>
-                            <input type="text" value="{{ $advogado->cidade }}" class="form-control input-sm" id="advogadoCidade" 
-                            name="cidade" placeholder="digite sua cidade..." required>
+                            <label><span style="color:#ea1e1e">Cidade</span></label>
+                            <input type="text" class="form-control input-sm" id="cidade" size="40"
+                            name="cidade" placeholder="digite sua cidade..." value="{{ $advogado->cidade }}">
                         </div>
                         <!-- fim cidade -->
 
-                        <!-- uf do estado -->
-                        <div class="form-group col-md-2">
-                            <label for="uf"><span style="color:#ea1e1e">Estado(UF)</span></label>
-                                <select class="form-control input-sm" id="advogadoUf" name="uf" required>
-                                <option>{{ $advogado->uf }}</option>
-                                <option>AC</option>
-                                <option>AL</option>
-                                <option>AP</option>
-                                <option>AM</option>
-                                <option>BA</option>
-                                <option>CE</option>
-                                <option>DF</option>
-                                <option>ES</option>
-                                <option>GO</option>
-                                <option>MA</option>
-                                <option>MT</option>
-                                <option>MS</option>
-                                <option>MG</option>
-                                <option>PA</option>
-                                <option>PB</option>
-                                <option>PR</option>
-                                <option>PE</option>
-                                <option>PI</option>
-                                <option>RJ</option>
-                                <option>RN</option>
-                                <option>RS</option>
-                                <option>RO</option>
-                                <option>RR</option>
-                                <option>SC</option>
-                                <option>SP</option>
-                                <option>SE</option>
-                                <option>TO</option>
-                            </select>
+                        <!-- uf -->
+                        <div class="form-group col-md-1">
+                            <label><span style="color:#ea1e1e">UF</span></label>
+                            <input type="text" class="form-control input-sm" id="uf" size="2"
+                            name="uf" placeholder="digite sua cidade..." value="{{ $advogado->uf }}">
                         </div>
-                        <!-- fim uf do estado -->                    
+                        <!-- fim uf -->  
+                    </form>
+                    <!-- form para consumir a API -->                  
                     </div>
                     <!-- fim conteudo de endereço -->
 
@@ -205,7 +180,7 @@
                         <!-- descrição -->
                         <div class="form-group col-md-12">
                             <label for="descricao">Descrições adicionais</label>
-                            <textarea type="text"  class="form-control input-sm" id="advogadoDescricao" 
+                            <textarea type="text" class="form-control input-sm" 
                             name="descricao" placeholder="digite sua descricão...">{{ $advogado->descricao }}</textarea>
                         </div>
                         <!-- fim descrição -->
@@ -215,8 +190,8 @@
                     <div class="row" style="margin-left: 0">
                         <!-- botoes -->                    
                         <div class="form-group" style="margin-left: 15px">	
-                            <button type="submit" class="btn btn-success btn-sm"><b class="fa fa-retweet"></b> Atualizar</button>
-                            <a href="{{ url('painel/advogados') }}" class="btn btn-primary btn-sm"><b class="fa fa-reply-all"></b> Voltar à Lista</a>
+                            <button type="submit" class="btn btn-success btn-sm"><b class="fa fa-paper-plane"></b> Salvar Novo</button>
+                            <a href="{{ route('advogados.index') }}" class="btn btn-primary btn-sm"><b class="fa fa-reply-all"></b> Voltar à Lista</a>
                         </div>
                         <!-- fim botoes -->
                     </div>

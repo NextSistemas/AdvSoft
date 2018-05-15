@@ -11,13 +11,13 @@ $this->group(['middleware' => ['auth'], 'namespace' => 'Painel', 'prefix' => 'pa
 	$this->get('/', 'PainelController@index')->name('painel');
 	
 	//rotas para advogados	
-	$this->get('advogados', 'AdvogadoController@index');
-	$this->get('advogados/novo', 'AdvogadoController@novo');
-	$this->post('advogados', 'AdvogadoController@store');
-	$this->get('advogados/{id}', 'AdvogadoController@mostrar');	
-	$this->get('advogados/{id}/editar', 'AdvogadoController@editar');
-	$this->put('advogados/{id}', 'AdvogadoController@atualizar');
-	$this->post('advogados', 'AdvogadoController@deletar')->name('advogados.deletar');
+	$this->get('advogados', 'AdvogadoController@index')->name('advogados.index');
+	$this->get('advogados/novo', 'AdvogadoController@novo')->name('advogados.create');
+	$this->get('advogados/{id}', 'AdvogadoController@mostrar')->name('advogados.show');
+	$this->get('advogados/{id}/editar', 'AdvogadoController@editar')->name('advogados.edit');
+	$this->put('advogados/{id}', 'AdvogadoController@atualizar')->name('advogados.update');
+	$this->post('advogados', 'AdvogadoController@store')->name('advogados.store');
+	$this->post('advogados/destroy', 'AdvogadoController@deletar')->name('advogados.delete');
 		
 
 	//rotas para teste de front end 
